@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ApplozicAndroidPoc</string>
+    <string name="application_key">kaayalbs384c3abc47ebd9763f8b570061f3cbab6</string>
+    <string name="default_media_location_folder">Applozic</string>
+    <string name="default_server_url">https://apps.applozic.com</string>
+    <string name="default_mqtt_server_url">tcp://apps.applozic.com:1883</string>
+
+    <string name="take_order_userid">ApplozicShop</string>
+
+    <string name="invite_message">Hey, check out Applozic -
+        Plug &amp; Play Messaging: http://www.applozic.com</string>
+    <string name="facebook_app_id">2194468880571702</string>
+    <string name="title_activity_order_details">OrderDetailsActivity</string>
+
+    <string name="cusname">Customer Name</string>
+</resources>
