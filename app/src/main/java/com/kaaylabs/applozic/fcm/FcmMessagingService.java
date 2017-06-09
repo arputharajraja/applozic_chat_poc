@@ -10,6 +10,7 @@ public class FcmMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+
     }
 
 }

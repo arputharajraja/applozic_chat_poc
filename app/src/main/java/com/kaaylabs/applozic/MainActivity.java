@@ -16,6 +16,7 @@ import com.applozic.mobicomkit.api.account.user.User;
 import com.applozic.mobicomkit.api.account.user.UserLoginTask;
 import com.applozic.mobicomkit.contact.AppContactService;
 import com.applozic.mobicomkit.uiwidgets.ApplozicSetting;
+import com.applozic.mobicomkit.uiwidgets.conversation.ConversationUIService;
 import com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity;
 import com.applozic.mobicommons.people.contact.Contact;
 import com.google.firebase.messaging.RemoteMessage;
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements FcmListener{
     Button chatBtn;
     User user;
     UserLoginTask.TaskListener listener;
+    String userId;
+    String userName;
+    String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +44,18 @@ public class MainActivity extends AppCompatActivity implements FcmListener{
         setContentView(R.layout.activity_main);
         FcmManager.getInstance(getApplicationContext()).registerListener(this);
         chatBtn = (Button) findViewById(R.id.chatBtn);
+        userId = "muruganandham.rajavelu";
+        userName = "Muruganantham";
+        userEmail = "muruganandham.rajavelu@kaaylabs.com";
+
+       /* userId = "arputharaj.raja";
+        userName = "Arputharaj Buyer";
+        userEmail = "arputharaj.raja@kaaylabs.com";*/
 
         user = new User();
-        user.setUserId("1"); //userId it can be any unique user identifier
-        user.setDisplayName("Arpu"); //displayName is the name of the user which will be shown in chat messages
-        user.setEmail("arputharaj.raja@kaaylabs.com"); //optional
+        user.setUserId(userId); //userId it can be any unique user identifier
+        user.setDisplayName(userName); //displayName is the name of the user which will be shown in chat messages
+        user.setEmail(userEmail); //optional
         user.setImageLink("");//optional,pass your image link
 
         listener = new UserLoginTask.TaskListener() {
@@ -54,24 +65,33 @@ public class MainActivity extends AppCompatActivity implements FcmListener{
                 // After successful registration with Applozic server the callback will come here
                 ApplozicSetting.getInstance(context).showStartNewButton();//To show contact list.
 
-                Contact contact1 = new Contact();
-                contact1.setUserId("Bharath");
-                contact1.setFullName("Bharath Jeeva");
+                /*Contact contact1 = new Contact();
+                contact1.setUserId("muruganandham.rajavelu");
+                contact1.setFullName("Muruganantham");
                 contact1.setImageURL("R.drawable.applozic_ic_contact_picture_holo_light");
-                contact1.setEmailId("aaarputharaj@gmail.com");
+                contact1.setEmailId("muruganandham.rajavelu@kaaylabs.com");*/
 
-                Contact contact2 = new Contact();
-                contact2.setUserId("Anand");
-                contact2.setFullName("Anantharaj Raja");
+                Contact contact1 = new Contact();
+                contact1.setUserId("arputharaj.raja");
+                contact1.setFullName("Arputharaj raja");
+                contact1.setImageURL("R.drawable.applozic_ic_contact_picture_holo_light");
+                contact1.setEmailId("arputharaj.raja@kaaylabs.com");
+
+            /*    Contact contact2 = new Contact();
+                contact2.setUserId("bajibabu.shaik");
+                contact2.setFullName("Bajibabu shaik");
                 contact2.setImageURL("R.drawable.applozic_ic_contact_picture_holo_light");
-                contact2.setEmailId("anantharaj.raja@kaaylabs.com");
+                contact2.setEmailId("bajibabu.shaik@kaaylabs.com");*/
 
                 Context context1 = getApplicationContext();
                 AppContactService appContactService = new AppContactService(context1);
                 appContactService.add(contact1);
-                appContactService.add(contact2);
-
+                //appContactService.add(contact2);
+                //appContactService.add(contact4);
                 Intent intent = new Intent(getApplicationContext(), ConversationActivity.class);
+              /*  intent.putExtra(ConversationUIService.USER_ID, userId);
+                intent.putExtra(ConversationUIService.DISPLAY_NAME, userName); //put it for displaying the title.
+                intent.putExtra(ConversationUIService.TAKE_ORDER,true); //Skip chat list for showing on back press*/
                 startActivity(intent);
             }
 
