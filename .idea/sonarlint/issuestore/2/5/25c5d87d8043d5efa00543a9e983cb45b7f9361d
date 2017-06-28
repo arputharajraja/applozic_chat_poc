@@ -1,0 +1,8 @@
+
+fsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(“ök8àå‹åÈ+
+Usquid:UselessImportCheck".Remove this unused import 'android.view.View'.(Ø½­äþÿÿÿÿ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‰°Ñ8ªÎ‚åÈ+
+csquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(§óÍÖ
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ëýÿ•ýÿÿÿÿ8°›‚åÈ+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(çâï•8‰äÕâÈ+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ß–„ýúÿÿÿÿ8†ûÏäÈ+
